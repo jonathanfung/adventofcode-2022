@@ -31,13 +31,13 @@ const getBadgeItemTypeAndPriority = (groupRucksackItems: string[]): [string, num
   return [badgeItemType, getPriority(badgeItemType)];
 };
 
-let current: string[] = [];
+let currentRucksackGroup: string[] = [];
 const prioritySum = INPUT.split('\n').reduce((acc, rucksackContents, i) => {
-  current.push(rucksackContents);
+  currentRucksackGroup.push(rucksackContents);
 
-  if (current.length === GROUP_SIZE) {
-    const [badgeItemType, priority] = getBadgeItemTypeAndPriority(current);
-    current = [];
+  if (currentRucksackGroup.length === GROUP_SIZE) {
+    const [badgeItemType, priority] = getBadgeItemTypeAndPriority(currentRucksackGroup);
+    currentRucksackGroup = [];
 
     console.log(`Badge Item Type is [${badgeItemType}]`);
     return acc + priority;
