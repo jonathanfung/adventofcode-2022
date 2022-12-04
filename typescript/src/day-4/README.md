@@ -66,4 +66,6 @@ So, in this example, the number of overlapping assignment pairs is 4.
 
 In how many assignment pairs do the ranges overlap?
 
+![Working for Part Two solution](day-4-pt-2.jpg "Working for Part Two solution")
+
 Your puzzle answer was 843.
