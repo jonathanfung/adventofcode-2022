@@ -27,12 +27,12 @@ const getBadgeItemTypeAndPriority = (groupRucksackItems: string[]): [string, num
     );
   }
 
-  const [badgeItemType] = [...distinctBadgeItemTypes];
+  const [badgeItemType] = distinctBadgeItemTypes;
   return [badgeItemType, getPriority(badgeItemType)];
 };
 
 let currentRucksackGroup: string[] = [];
-const prioritySum = INPUT.split('\n').reduce((acc, rucksackContents, i) => {
+const prioritySum = INPUT.split('\n').reduce((sum, rucksackContents, i) => {
   currentRucksackGroup.push(rucksackContents);
 
   if (currentRucksackGroup.length === GROUP_SIZE) {
@@ -40,10 +40,10 @@ const prioritySum = INPUT.split('\n').reduce((acc, rucksackContents, i) => {
     currentRucksackGroup = [];
 
     console.log(`Badge Item Type is [${badgeItemType}]`);
-    return acc + priority;
+    return sum + priority;
   }
 
-  return acc;
+  return sum;
 }, 0);
 
 console.log(`Final priority sum: ${prioritySum}`);

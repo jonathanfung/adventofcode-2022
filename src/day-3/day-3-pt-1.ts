@@ -13,7 +13,7 @@ const getPriority = (char: string) => {
   return priority;
 };
 
-const prioritySum = INPUT.split('\n').reduce((acc, rucksackContents) => {
+const prioritySum = INPUT.split('\n').reduce((sum, rucksackContents) => {
   if (rucksackContents) {
     const splitIndex = rucksackContents.length / 2;
     const rucksackCompartments = [
@@ -25,9 +25,9 @@ const prioritySum = INPUT.split('\n').reduce((acc, rucksackContents) => {
     const compartment2 = new Set<string>([...rucksackCompartments[1]]);
 
     const [duplicateItem] = [...compartment1].filter((char) => compartment2.has(char));
-    return acc + getPriority(duplicateItem);
+    return sum + getPriority(duplicateItem);
   }
-  return acc;
+  return sum;
 }, 0);
 
 console.log(prioritySum);
