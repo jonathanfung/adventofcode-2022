@@ -43,4 +43,4 @@ INPUT.split('\n').forEach((inputLine) => {
 });
 
 console.log(stacks);
-console.log(Object.values(stacks).reduce((acc, stack) => acc + (stack[0] || ' '), ''));
+console.log(Object.values(stacks).reduce((acc, stack) => acc + stack[0], ''));
