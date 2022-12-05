@@ -4,7 +4,7 @@ type CrateStacks = { [stackNum: string]: string[] };
 
 const stacks: CrateStacks = {};
 
-const processStackLayout = (stacks: CrateStacks, inputLine: string) => {
+const processStackLayout = (stacks: CrateStacks, inputLine: string): void => {
   const matches = [...inputLine.matchAll(/\[([^\]]+)\]/g)];
   matches.forEach((each) => {
     const [_, match] = each;
@@ -17,11 +17,9 @@ const processStackLayout = (stacks: CrateStacks, inputLine: string) => {
       stacks[stackIndex] = [match];
     }
   });
-
-  return stacks;
 };
 
-const processMoveInstructionCrateMover9001 = (stacks: CrateStacks, inputLine: string) => {
+const processMoveInstructionCrateMover9001 = (stacks: CrateStacks, inputLine: string): void => {
   const regex = /move (?<quantity>\d+) from (?<from>\d+) to (?<to>\d+)/g;
   const matches = [...inputLine.matchAll(regex)];
 
