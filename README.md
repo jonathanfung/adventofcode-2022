@@ -8,6 +8,7 @@ My (quick/hacky) solutions in Typescript
 - [Day 2](https://github.com/jonathanfung/adventofcode-2022/tree/main/typescript/src/day-2)
 - [Day 3](https://github.com/jonathanfung/adventofcode-2022/tree/main/typescript/src/day-3)
 - [Day 4](https://github.com/jonathanfung/adventofcode-2022/tree/main/typescript/src/day-4)
+- [Day 5](https://github.com/jonathanfung/adventofcode-2022/tree/main/typescript/src/day-5)
 
 ## Python
 
