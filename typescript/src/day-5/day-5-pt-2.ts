@@ -21,23 +21,21 @@ const processStackLayout = (stacks: CrateStacks, inputLine: string) => {
   return stacks;
 };
 
-const processMoveInstruction = (stacks: CrateStacks, inputLine: string) => {
+const processMoveInstructionCrateMover9001 = (stacks: CrateStacks, inputLine: string) => {
   const regex = /move (?<quantity>\d+) from (?<from>\d+) to (?<to>\d+)/g;
   const matches = [...inputLine.matchAll(regex)];
 
   matches.forEach((each) => {
     const { quantity, from, to } = each.groups!;
-    for (let i = 0; i < Number.parseInt(quantity); i++) {
-      const crate = stacks[from].shift();
-      stacks[to].unshift(crate!);
-    }
+    const cratesToPickUp = stacks[from].splice(0, Number.parseInt(quantity));
+    stacks[to].unshift(...cratesToPickUp);
   });
 };
 
 INPUT.split('\n').forEach((inputLine) => {
   if (inputLine) {
     if (inputLine.startsWith('move')) {
-      processMoveInstruction(stacks, inputLine);
+      processMoveInstructionCrateMover9001(stacks, inputLine);
     } else {
       processStackLayout(stacks, inputLine);
     }
