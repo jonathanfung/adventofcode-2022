@@ -22,4 +22,4 @@ const detectMarkerPosition = (messageSize: number) => {
   }
 };
 
-console.log(detectMarkerPosition(4));
+console.log(detectMarkerPosition(14));
