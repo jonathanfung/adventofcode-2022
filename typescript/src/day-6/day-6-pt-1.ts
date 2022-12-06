@@ -4,9 +4,9 @@ const input = INPUT;
 
 const checkMarker = (buffer: string[]) => new Set<string>(buffer).size === 4;
 
-const buffer: string[] = [...input.slice(0, 4)];
-
 const detectMarkerPosition = () => {
+  const buffer: string[] = [...input.slice(0, 4)];
+
   if (checkMarker(buffer)) {
     return 4;
   }
