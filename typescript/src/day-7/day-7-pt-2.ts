@@ -28,7 +28,6 @@ const touch = (name: string, size: number): File => ({
 
 let fileTree: Directory | null = null;
 let currentDirectory: Directory | null = null;
-let dirCount = 0;
 
 const handleChangeDirectory = (changeToPath: string) => {
   if (!currentDirectory) {
@@ -38,7 +37,6 @@ const handleChangeDirectory = (changeToPath: string) => {
     if (changeToPath === '..') {
       currentDirectory = currentDirectory?.parent ?? null;
     } else {
-      dirCount++;
       const newDir = mkdir(changeToPath, currentDirectory);
       currentDirectory.children.push(newDir);
       currentDirectory = newDir;
